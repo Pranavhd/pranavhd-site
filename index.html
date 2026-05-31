@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pranav HD</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--a:#4f46e5;--al:#4f46e510;--b:#f5f5f5;--t:#111;--m:#555;--s:#e5e5e5}
+body{font:15px/1.7 system-ui,sans-serif;background:#fff;color:var(--t);display:flex;min-height:100vh}
+
+/* Sidebar */
+aside{width:260px;min-height:100vh;background:var(--b);border-right:1px solid var(--s);padding:2.5rem 1.5rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+.av{width:88px;height:88px;min-width:88px;min-height:88px;flex-shrink:0;border-radius:50%;border:2px solid var(--s);background:var(--s);display:flex;align-items:center;justify-content:center;font-size:2.2rem;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+h1{font-size:1.2rem;font-weight:700;line-height:1.2}
+.role{font-size:.78rem;color:var(--a);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+hr{border:none;border-top:1px solid var(--s)}
+.bio{font-size:.85rem;color:var(--m);line-height:1.65}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{font-size:.72rem;background:var(--al);color:var(--a);border:1px solid #4f46e520;border-radius:99px;padding:.2rem .65rem;font-weight:500}
+.project-card{border:1px solid var(--s);border-radius:8px;padding:.6rem;cursor:pointer;transition:border-color .2s,box-shadow .2s;text-decoration:none;display:block}
+.project-card:hover{border-color:var(--a);box-shadow:0 2px 8px #4f46e518}
+.project-card img{width:100%;border-radius:5px;margin-bottom:.4rem}
+.project-card h3{font-size:.75rem;color:var(--t);font-weight:700;line-height:1.3;margin-bottom:.2rem}
+.project-card p{font-size:.68rem;color:var(--m);line-height:1.4}
+.project-label{font-size:.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-bottom:.5rem}
+.gif-card{border:1px solid var(--s);border-radius:10px;overflow:hidden;margin-bottom:1.2rem}
+.gif-card img{width:100%;display:block}
+.gif-card .caption{padding:.8rem 1rem;font-size:.82rem;color:var(--m);line-height:1.5}
+.gif-card .caption strong{color:var(--t)}
+.stat-row{display:flex;gap:.8rem;margin-top:.6rem;flex-wrap:wrap}
+.stat{text-align:center;flex:1;min-width:60px;padding:.5rem;background:var(--al);border-radius:6px}
+.stat .num{font-size:1.1rem;font-weight:700;color:var(--a)}
+.stat .lbl{font-size:.65rem;color:var(--m)}
+nav{display:flex;flex-direction:column;gap:.5rem}
+nav a{font-size:.82rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.5rem;padding:.3rem .5rem;border-radius:6px;transition:background .15s,color .15s}
+nav a:hover{background:var(--al);color:var(--a)}
+nav svg{flex-shrink:0}
+
+/* Main */
+main{flex:1;padding:3rem 3.5rem;max-width:780px}
+.section-title{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:1.2rem}
+.placeholder{font-size:.9rem;color:#bbb;padding:2rem;border:1.5px dashed #e0e0e0;border-radius:10px;text-align:center}
+</style>
+</head>
+<body>
+
+<aside>
+  <div class="av"><img src="Profilepic.png" alt="Pranav Deshpande"></div>
+
+  <div>
+    <h1>Pranav Deshpande</h1>
+    <p class="role">Senior Software Engineer</p>
+  </div>
+
+  <hr>
+
+  <p class="bio">9+ years building distributed systems and AI platforms at scale. Currently leading Walmart's generative AI initiative for fashion — where AI-designed products are already on store shelves and selling.</p>
+
+  <hr>
+
+  <p class="project-label">Featured Projects</p>
+  <a class="project-card" href="projects/agentic-ai.html">
+    <img src="assets/PipelineComparison.gif" alt="V1 vs V2 Pipeline" loading="lazy">
+    <h3>Goal-Based Agentic AI using Knowledge Graph</h3>
+    <p>LangGraph + Gemini + SGDAEO framework. 3.6x extraction improvement with graph-guided gap detection.</p>
+  </a>
+  <a class="project-card" href="projects/vision-plays.html" style="margin-top:.3rem">
+    <h3>VisionPlays — CV + LLM Game Agent</h3>
+    <p>Computer vision reads the board, LLM reasons the next move. Real-time TicTacToe played by AI.</p>
+  </a>
+
+  <hr>
+
+  <nav>
+    <a href="https://github.com/pranavhd" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      GitHub
+    </a>
+    <a href="https://linkedin.com/in/pranavhd" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.985V9h3.102v1.561h.046c.432-.818 1.487-1.681 3.062-1.681 3.274 0 3.878 2.154 3.878 4.957v6.615zM5.337 7.433a1.8 1.8 0 110-3.601 1.8 1.8 0 010 3.601zm1.554 13.019H3.782V9h3.109v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="mailto:pranavhd@gmail.com">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      pranavhd@gmail.com
+    </a>
+    <a href="Pranav_Deshpande_Resume.pdf" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Resume
+    </a>
+  </nav>
+</aside>
+
+<main>
+  <p class="section-title">About</p>
+  <p style="font-size:.95rem;color:var(--t);line-height:1.8;margin-bottom:2.5rem">I'm a Senior Software Engineer at Walmart Global Tech with 9+ years of experience across distributed systems, AI/ML platforms, and full-stack engineering. I currently lead the architecture of <strong>Trend-to-Product AI</strong> — a generative AI platform that compressed Walmart's fashion product development cycle from 47 to 8 weeks, put the first AI-designed products on store shelves, and drove 15K+ units sold. Before that, I built payment platforms processing $22.5M/year in memberships, scaled event pipelines to 1.5 billion Kafka messages, and shipped PCI-compliant systems serving Sam's Club members nationwide.</p>
+
+  <p class="section-title">What I work with</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem">
+    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
+      <strong style="font-size:.8rem;color:var(--a)">AI / LLM Systems</strong>
+      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">LangChain, LangGraph, RAG pipelines, vector search, LLM-as-Judge evaluation, multi-model orchestration</p>
+    </div>
+    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
+      <strong style="font-size:.8rem;color:var(--a)">Distributed Platforms</strong>
+      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">Kubernetes, Kafka, microservices, event-driven pipelines, cloud infrastructure (AWS, Azure)</p>
+    </div>
+    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
+      <strong style="font-size:.8rem;color:var(--a)">Full-Stack Engineering</strong>
+      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">React, TypeScript, FastAPI, Node.js, GraphQL, Python</p>
+    </div>
+    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
+      <strong style="font-size:.8rem;color:var(--a)">Data & Observability</strong>
+      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">PostgreSQL, Milvus, ElasticSearch, Prometheus, Grafana, OpenTelemetry</p>
+    </div>
+  </div>
+
+  <p class="section-title">Experience</p>
+  <div style="margin-bottom:2.5rem">
+    <div style="margin-bottom:1.5rem">
+      <p style="font-size:.95rem;font-weight:700">Senior Software Engineer</p>
+      <p style="font-size:.82rem;color:var(--a);font-weight:600">Walmart Global Tech &middot; Mar 2022 – Present</p>
+      <p style="font-size:.85rem;color:var(--m);margin-top:.3rem">Leading Trend-to-Product AI (generative AI for fashion), previously Sam's Club Membership & Payments and Scan & Go platforms.</p>
+    </div>
+    <div style="margin-bottom:1.5rem">
+      <p style="font-size:.95rem;font-weight:700">Software Engineer 3</p>
+      <p style="font-size:.82rem;color:var(--a);font-weight:600">Walmart Global Tech &middot; Jun 2019 – Mar 2022</p>
+      <p style="font-size:.85rem;color:var(--m);margin-top:.3rem">Scan & Go platform engineering — cloud migrations, CCPA compliance, ML image recognition for checkout.</p>
+    </div>
+    <div style="margin-bottom:1.5rem">
+      <p style="font-size:.95rem;font-weight:700">Software Engineer</p>
+      <p style="font-size:.82rem;color:var(--a);font-weight:600">Fidelity Investments &middot; Jul 2016 – Jul 2017</p>
+      <p style="font-size:.85rem;color:var(--m);margin-top:.3rem">Data integrations and test coverage improvements across 800+ services.</p>
+    </div>
+  </div>
+
+  <p class="section-title">Education</p>
+  <div style="margin-bottom:2.5rem">
+    <p style="font-size:.9rem"><strong>MS Computer Science</strong> — Arizona State University <span style="color:var(--m);font-size:.82rem">(2017–2019)</span></p>
+    <p style="font-size:.9rem;margin-top:.4rem"><strong>BS Computer Science</strong> — NIT Karnataka <span style="color:var(--m);font-size:.82rem">(2012–2016)</span></p>
+  </div>
+
+  <p class="section-title">Publications</p>
+  <div>
+    <p style="font-size:.85rem;margin-bottom:.4rem">A Novel Machine Learning Approach for Bug Prediction (2016)</p>
+    <p style="font-size:.85rem">Comparison of OpenCL and CUDA Frameworks on Heterogeneous Systems (2015)</p>
+  </div>
+</main>
+
+</body>
+</html>
