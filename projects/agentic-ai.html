@@ -10,8 +10,8 @@
 body{font:15px/1.7 system-ui,sans-serif;background:#fff;color:var(--t);display:flex;min-height:100vh}
 
 /* Sidebar — same as index */
-aside{width:260px;min-height:100vh;background:var(--b);border-right:1px solid var(--s);padding:2.5rem 1.5rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100vh;overflow-y:auto}
-.av{width:88px;height:88px;border-radius:50%;border:2px solid var(--s);background:var(--s);display:flex;align-items:center;justify-content:center;overflow:hidden}
+aside{width:260px;flex-shrink:0;min-height:100vh;background:var(--b);border-right:1px solid var(--s);padding:2.5rem 1.5rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+.av{width:88px;height:88px;min-width:88px;min-height:88px;flex-shrink:0;border-radius:50%;border:2px solid var(--s);background:var(--s);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .av img{width:100%;height:100%;object-fit:cover}
 h1{font-size:1.2rem;font-weight:700;line-height:1.2}
 .role{font-size:.78rem;color:var(--a);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
@@ -25,7 +25,7 @@ nav a:hover{background:var(--al);color:var(--a)}
 nav svg{flex-shrink:0}
 
 /* Main */
-main{flex:1;padding:3rem 3.5rem;max-width:780px}
+main{flex:1;min-width:0;padding:3rem 3.5rem;max-width:780px}
 .section-title{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:1.2rem}
 .gif-card{border:1px solid var(--s);border-radius:10px;overflow:hidden;margin-bottom:1.2rem}
 .gif-card img{width:100%;display:block}
@@ -36,6 +36,13 @@ main{flex:1;padding:3rem 3.5rem;max-width:780px}
 .stat .num{font-size:1.1rem;font-weight:700;color:var(--a)}
 .stat .lbl{font-size:.65rem;color:var(--m)}
 .tag{font-size:.72rem;background:var(--al);color:var(--a);border:1px solid #4f46e520;border-radius:99px;padding:.2rem .65rem;font-weight:500;display:inline-block;margin:.15rem .1rem}
+
+/* Stack the two columns on phones and small tablets */
+@media (max-width:820px){
+  body{flex-direction:column;min-height:0}
+  aside{width:100%;height:auto;min-height:0;position:static;overflow-y:visible;border-right:none;border-bottom:1px solid var(--s);padding:2rem 1.25rem}
+  main{width:100%;max-width:100%;padding:2rem 1.25rem}
+}
 </style>
 </head>
 <body>

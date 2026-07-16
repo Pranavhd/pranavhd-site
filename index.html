@@ -10,7 +10,7 @@
 body{font:15px/1.7 system-ui,sans-serif;background:#fff;color:var(--t);display:flex;min-height:100vh}
 
 /* Sidebar */
-aside{width:260px;min-height:100vh;background:var(--b);border-right:1px solid var(--s);padding:2.5rem 1.5rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+aside{width:260px;flex-shrink:0;min-height:100vh;background:var(--b);border-right:1px solid var(--s);padding:2.5rem 1.5rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100vh;overflow-y:auto}
 .av{width:88px;height:88px;min-width:88px;min-height:88px;flex-shrink:0;border-radius:50%;border:2px solid var(--s);background:var(--s);display:flex;align-items:center;justify-content:center;font-size:2.2rem;overflow:hidden}
 .av img{width:100%;height:100%;object-fit:cover}
 h1{font-size:1.2rem;font-weight:700;line-height:1.2}
@@ -39,9 +39,21 @@ nav a:hover{background:var(--al);color:var(--a)}
 nav svg{flex-shrink:0}
 
 /* Main */
-main{flex:1;padding:3rem 3.5rem;max-width:780px}
+main{flex:1;min-width:0;padding:3rem 3.5rem;max-width:780px}
 .section-title{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:1.2rem}
 .placeholder{font-size:.9rem;color:#bbb;padding:2rem;border:1.5px dashed #e0e0e0;border-radius:10px;text-align:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem}
+.card{padding:1.2rem;border:1px solid var(--s);border-radius:8px}
+.card strong{font-size:.8rem;color:var(--a)}
+.card p{font-size:.82rem;color:var(--m);margin-top:.4rem}
+
+/* Stack the two columns on phones and small tablets */
+@media (max-width:820px){
+  body{flex-direction:column;min-height:0}
+  aside{width:100%;height:auto;min-height:0;position:static;overflow-y:visible;border-right:none;border-bottom:1px solid var(--s);padding:2rem 1.25rem}
+  main{width:100%;max-width:100%;padding:2rem 1.25rem}
+  .grid2{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -98,22 +110,22 @@ main{flex:1;padding:3rem 3.5rem;max-width:780px}
   <p style="font-size:.95rem;color:var(--t);line-height:1.8;margin-bottom:2.5rem">I'm a Senior Software Engineer at Walmart Global Tech with 9+ years of experience across distributed systems, AI/ML platforms, and full-stack engineering. I currently lead the architecture of <strong>Trend-to-Product AI</strong> — a generative AI platform that compressed Walmart's fashion product development cycle from 47 to 8 weeks, put the first AI-designed products on store shelves, and drove 15K+ units sold. Before that, I built payment platforms processing $22.5M/year in memberships, scaled event pipelines to 1.5 billion Kafka messages, and shipped PCI-compliant systems serving Sam's Club members nationwide.</p>
 
   <p class="section-title">What I work with</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem">
-    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
-      <strong style="font-size:.8rem;color:var(--a)">AI / LLM Systems</strong>
-      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">LangChain, LangGraph, RAG pipelines, vector search, LLM-as-Judge evaluation, multi-model orchestration</p>
+  <div class="grid2">
+    <div class="card">
+      <strong>AI / LLM Systems</strong>
+      <p>LangChain, LangGraph, RAG pipelines, vector search, LLM-as-Judge evaluation, multi-model orchestration</p>
     </div>
-    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
-      <strong style="font-size:.8rem;color:var(--a)">Distributed Platforms</strong>
-      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">Kubernetes, Kafka, microservices, event-driven pipelines, cloud infrastructure (AWS, Azure)</p>
+    <div class="card">
+      <strong>Distributed Platforms</strong>
+      <p>Kubernetes, Kafka, microservices, event-driven pipelines, cloud infrastructure (AWS, Azure)</p>
     </div>
-    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
-      <strong style="font-size:.8rem;color:var(--a)">Full-Stack Engineering</strong>
-      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">React, TypeScript, FastAPI, Node.js, GraphQL, Python</p>
+    <div class="card">
+      <strong>Full-Stack Engineering</strong>
+      <p>React, TypeScript, FastAPI, Node.js, GraphQL, Python</p>
     </div>
-    <div style="padding:1.2rem;border:1px solid var(--s);border-radius:8px">
-      <strong style="font-size:.8rem;color:var(--a)">Data & Observability</strong>
-      <p style="font-size:.82rem;color:var(--m);margin-top:.4rem">PostgreSQL, Milvus, ElasticSearch, Prometheus, Grafana, OpenTelemetry</p>
+    <div class="card">
+      <strong>Data & Observability</strong>
+      <p>PostgreSQL, Milvus, ElasticSearch, Prometheus, Grafana, OpenTelemetry</p>
     </div>
   </div>
 
